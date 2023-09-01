@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanseon's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d9a2f6c5e9.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sideMenu">
+                    <li><a href="#Header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Full Stack Web Developer</p>
+                <h1>Hi, I'm <span>Hanseon</span><br> and I'm a Developer</h1>
+            </div>
+        </div>
+    </div>
+    <!----------------- about ------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Photos/profile1.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>As a self-taught web developer, I thrive on challenging myself and expanding my knowledge every day. My passion lies in sharing my expertise with others and working seamlessly with a team to achieve resounding success.  </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Frontend Web Development</span><br>Designing Web/interfaces</li>
+                            <li><span>Backend Web Development</span><br>Programming interfaces for servers, databases</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021 - Present</span><br>Licensed Insurance Advisor</li>
+                            <li><span>2018 - 2021</span><br>Licensed Paralegal</li>
+                            <li><span>2016 - 2018</span><br>Retail Store Manager</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2016 - 2018</span><br>Paralegal Education</li>
+                            <li><span>2021</span><br>RIBO Licensed</li>
+                            <li><span>2018</span><br>P.1 license</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!----------------Services ----------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-sign-hanging"></i>
+                <h2>Real Estate Website</h2>
+                <p>Created an Real Estate Website using HTMl, CSS, and Javascript</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-car"></i>
+                <h2>Automobile website</h2>
+                <p>Created an auto website using Next JS, Tailwind CSS, Framer Motion </p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-bowl-food"></i>
+                <h2>Restaurant Website</h2>
+                <p>Created a restaurant website using HTML, CSS, Javascript</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-discord"></i>
+                <h2>Discord (Clone)</h2>
+                <p>Created a discord clone using Next.js 13, React, Socket.io, Prisma, Tailwind CSS, MySQL</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-spotify"></i>
+                <h2>Spotify (clone)</h2>
+                <p>Created a Spotify clone using Next 13.4, React, Stripe, Supabase, PostgreSQL, Tailwind CSS</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------------contact----------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> Jwkhs@icloud.com</p>
+                <p><i class="fa-solid fa-square-phone"></i> 647-700-5397</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com/hanseon_kimm?igshid=MmIzYWVlNDQ5Yg=="><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="Photos/my-cv.pdf" class="btn btn2" download>Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name='submit-to-google-sheet'>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="copyright">
+        <p>Copyright @ Hanseon Kim</p>
+    </div>
+</div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+    <script>
+        var sideMenu = document.getElementById("sideMenu");
+        function openMenu(){
+            sideMenu.style.right = "0";
+        }
+        function closeMenu(){
+            sideMenu.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwaQFsIlq_UxqMUHZr9WlPZejtfoBimCreP9FK8qw79-a061IoPutVKewbHfdwYCsPZgw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
